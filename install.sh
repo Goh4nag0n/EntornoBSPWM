@@ -90,7 +90,6 @@ mkdir ~/ScreenShots
 # Copiando Archivos de Configuración
 
 cp -rv $ruta/Config/* ~/.config/
-sudo cp -rv $ruta/kitty /opt/
 
 # Kitty Root
 
