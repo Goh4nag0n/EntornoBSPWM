@@ -1,0 +1,48 @@
+nano ~/.config/polybar
+nano launch.sh
+filtrar en modulos 
+
+log ahi se configura el color
+backgroun = ${color.bg}
+
+tamebin donde esta el logo se copia por el otro en hack fonts
+
+filtramos font-6
+y creamos abajo: 
+font-7 = "Hack Nerd Font:size=13;3"
+
+para crear barras custom y para en general configurar cuales barras se tienen que ver
+hacemos lo siguiente
+en:
+nano launch.sh
+copiamos una de las barras y le ponemos 
+polybar ethernet_bar -c ~/.config/polybar/current.ini &
+
+creamos una barra copiando en current.ini la bar/secundary y la llamamos bar/ethernet_bar
+
+para crear el custom primero colocas en modulo ethernet_status
+
+[module/ethernet_status]
+type = custom/script
+interval = 2
+exec = ~/.config/bin/ethernet_status.sh
+
+mkdir bin 
+touch ethernet_status.sh
+chmod +x ethernet_status.sh
+nano ethernet_status.sh
+echo "%{F#2495e7}ICONO %{F#ffffff}$(/usr/sbin/ifconfig wlp3s0 | grep "inet " | NR=1 awk '{print $2}')%{u-}"
+
+ahora vamos con el vpn
+
+label-active-foreground
+lo pones en red
+
+
+
+
+
+
+
+
+

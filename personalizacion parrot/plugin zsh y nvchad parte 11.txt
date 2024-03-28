@@ -1,0 +1,62 @@
+https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/sudo/sudo.plugin.zsh
+
+nos vamos al directorio /usr/share
+mkdir zsh-sudo
+chown goh4nagon:goh4nagon zsh-sudo
+en usuario no privilegiado hacemos
+wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/sudo/sudo.plugin.zsh
+nano ~/.zshrc
+copiamos el directorio 
+/usr/share/zsh-sudo/(zsh.plugin.sudo) ven el nombte en el directorio
+
+dentro de la carpeta buscamos al gun archivo que jale por if para auntenticar el origen y ponemos lo siguiente
+if [ -f /usr/share/zsh-sudo/sudo.plugin.zsh ] ; then
+	source /usr/share/zsh-sudo/sudo.plugin.zsh
+fi
+
+sudo su
+sudo apt install npm
+ 
+cd ~/.config/nvim
+rm -r ~/.config/nvim
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+
+luego nos metemos en nvim y descargamos la linux 64.tar a descargas
+nos metemos en la carpeta /opt
+y hacemos
+mv /home/goh4nagon/Descargas/nvim-linux64.tar.gz .
+luego un
+tar -xf de ese archivo
+rm y borramos el comprimido
+como usuario no privilegiado ejecutamos en 
+cd /opt/nvim-linux64/bin
+el archivo ./nvim
+luego le damos a no a la configuracion custom
+NvimTreeToggle
+para ponerlo en el entorno nos metemos al ~/.zshrc
+y agregamos al ruta absoluta del archivo al path
+/opt/nvim-linux64/bin
+para quitar el $ del entorno agregamos
+~/.config/nvim/lua/core en el init.lua
+escribimos en options 
+vim.opt.list=false
+
+ahora customizamos el rofi
+vamos a blue'sky en descargas
+mkdir -p ~/.config/rofi/themes
+con alt+. pueden llamar al directorio antes usado
+entonces copiamos
+cp nord.rasi alt+.
+rofi-theme-selector
+alt + a para guardar el nord
+
+sudo apt install flameshot ranger
+aplicas ranger y luego le das q pa salir
+flameshot gui para capturar
+
+para usar nvim en root
+nos metemos en ~/.config 
+y luego rm -rf nvim
+cp -r /home/goh4nagon/.config/nvim .
+ejecutamos nvim
+le damos N y listo

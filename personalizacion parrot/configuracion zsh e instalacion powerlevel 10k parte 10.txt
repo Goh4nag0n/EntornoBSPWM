@@ -1,0 +1,72 @@
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+
+nano ~/.zshrc
+nano ~/.p10k.zsh
+comentar todo lo de typeset hacia abajo
+
+debajo de vcs
+context
+command_execution_time
+status
+
+sudo su
+service ssh start
+ssh goh4nagon@localhost
+
+sudo su
+service ssh stop
+cd
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+
+cat /etc/passwd | grep -E "^goh4nagon|^root" pa saber en que shell estamos trabajando
+sudo su
+usermod --shell /usr/bin/zsh root
+usermod --shell /usr/bin/zsh goh4nagon
+
+ln -s -f /home/goh4nagon/.zshrc .zshrc
+
+configurar iconos en diferentes nodo
+nano ~/.zshrc
+
+filtrar HISTORY
+#save type history for completion and esoer life
+setopt histignorealldups sharehistory
+
+filtrar DIR_ANCHOR_BOLD
+setear en false para que no se vea oscurito 
+
+pa volver a configurar
+sudo su
+p10k configure
+
+mejorar autocompletado 
+
+nano ~/.zshrc
+
+# Use modern completion system
+autoload -Uz compinit
+compinit
+ 
+zstyle ':completion:*' auto-description 'specify: %d'
+zstyle ':completion:*' completer _expand _complete _correct _approximate
+zstyle ':completion:*' format 'Completing %d'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' menu select=2
+eval "$(dircolors -b)"
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
+zstyle ':completion:*' menu select=long
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*' use-compctl false
+zstyle ':completion:*' verbose true
+ 
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+
+error powelevel10k en root
+compaudit
+chown root:root (el archivo que les da el compaudit)

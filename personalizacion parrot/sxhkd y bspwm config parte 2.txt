@@ -1,0 +1,45 @@
+cd /home/goh4nagon/descargas/bspwm/examples/sxhkdrc
+mkdir ~/.config {sxhkd,sxhkd}
+cp bspwrc ~/.config/bspwm
+cp sxhkdrc ~/.config/sxhkd
+nano ~/.config/sxhkd/sxhkdrc
+
+#preselec the direction
+super + ctrl + alt + {Left,Down,Up,Right}
+#cancel the preselection 
+super + ctrl + alt + space
+#program launcher
+super + d
+	rofi -show run
+#close and kill
+super + {_,shift + }q
+#quit restart
+super + shift + {q,r}
+#open firefox
+super + shift + f
+	/usr/bin/firefox
+
+#custom resize 
+alt + super + {Left,Down,Up,Right}
+	/home/goh4nagon/.config/bspwm/scripts/bspwm_resize {west,south,north,east}
+
+mkdir /home/goh4nagon/.config/bspwm/scripts
+touch /home/goh4nagon/.config/bspwm/scripts/bspwm_resize
+chmod +x /home/goh4nagon/.config/bspwm/scripts/bspwm_resize
+nano /home/goh4nagon/.config/bspwm/scripts/bspwm_resize
+#!/usr/bin/env dash
+
+if bspc query -N -n focused.floating > /dev/null; then
+	step=20
+else
+	step=100
+fi
+
+case "$1" in
+	west) dir=right; falldir=left; x="-$step"; y=0;;
+	east) dir=right; falldir=left; x="$step"; y=0;;
+	north) dir=top; falldir=bottom; x=0; y="-$step";;
+	south) dir=top; falldir=bottom; x=0; y="$step";;
+esac
+
+bspc node -z "$dir" "$x" "$y" || bspc node -z "$falldir" "$x" "$y"
