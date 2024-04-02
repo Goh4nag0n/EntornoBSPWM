@@ -6,7 +6,7 @@ fi
 
 ruta=$(pwd)
 
-# Actualizando el sistema
+echo -e "\n[+] Actualizando el sistema"
 
 sudo apt update
 
@@ -26,7 +26,7 @@ sudo apt install -y meson libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfix
 
 # Instalamos paquetes adionales
 
-sudo apt install -y feh scrot scrub zsh rofi xclip bat locate neofetch wmname acpi bspwm sxhkd imagemagick ranger kitty thunar telnet krusader baobab flameshot ipcalc 
+sudo apt install -y feh scrot scrub zsh rofi xclip bat locate neofetch wmname acpi bspwm sxhkd imagemagick ranger kitty thunar telnet krusader baobab flameshot ipcalc npm 
 
 # Creando carpeta de Reposistorios
 
@@ -120,6 +120,12 @@ sudo wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/sudo/
 chsh -s /usr/bin/zsh
 sudo usermod --shell /usr/bin/zsh root
 sudo ln -s -fv ~/.zshrc /root/.zshrc
+
+#configuramos nvim
+cd ~/.config/nvim
+rm -r ~/.config/nvim
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+mv 
 
 # Asignamos Permisos a los Scritps
 
