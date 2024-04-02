@@ -6,7 +6,23 @@ fi
 
 ruta=$(pwd)
 
-#echo -e "\n[+] Actualizando el sistema"
+echo -e "\n[+] Actualizando el sistema"
+echo -e "\n[+] el entorno es parrot o debian puro?"&& read entorno
+while true; do
+    if [ $entorno = parrot ]; then
+        sudo apt update
+        sudo parrot-upgrade
+        break
+    elif [ $entorno = debian ]; then
+        sudo apt update
+        sudo apt upgrade
+        break
+    else 
+        echo -e "\n[!] unicamente se puede responder con parrot o debian en minusculas"
+        echo -e "\n[+] el entorno es parrot o debian puro?"&& read entorno 
+    fi
+    
+
 
 sudo apt update
 
