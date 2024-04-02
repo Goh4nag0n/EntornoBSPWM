@@ -200,7 +200,7 @@ elif [ $parameter_counter -eq 1 ]; then
     dependencies
     installRepositories
     filesConfiguration
-    utilsPermisssion
+    utilsPermission
     nvimInstall
     notify-send "BSPWM INSTALADO"
 else
