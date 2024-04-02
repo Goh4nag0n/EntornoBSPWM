@@ -6,7 +6,7 @@ fi
 
 ruta=$(pwd)
 
-echo -e "\n[+] Actualizando el sistema"
+#echo -e "\n[+] Actualizando el sistema"
 
 sudo apt update
 
@@ -115,17 +115,14 @@ sudo mkdir /usr/share/zsh-sudo
 cd /usr/share/zsh-sudo
 sudo wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/sudo/sudo.plugin.zsh
 
+
 # Cambiando de SHELL a zsh
 
 chsh -s /usr/bin/zsh
 sudo usermod --shell /usr/bin/zsh root
 sudo ln -s -fv ~/.zshrc /root/.zshrc
 
-#configuramos nvim
-cd ~/.config/nvim
-rm -r ~/.config/nvim
-git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
-mv 
+
 
 # Asignamos Permisos a los Scritps
 
@@ -136,7 +133,6 @@ chmod +x ~/.config/bin/htb_status.sh
 chmod +x ~/.config/bin/htb_target.sh
 chmod +x ~/.config/polybar/launch.sh
 sudo chmod +x /usr/local/bin/whichSystem.py
-sudo chmod +x /usr/local/bin/screenshot
 
 # Configuramos el Tema de Rofi
 
@@ -146,6 +142,20 @@ rofi-theme-selector
 # Removiendo Repositorio
 
 rm -rf ~/github
+
+#configuramos nvim
+cd ~/.config/nvim
+rm -r ~/.config/nvim
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+cd /opt
+mv $ruta/nvim-linux64.tar.gz .
+tar -xf nvim-linux64.tar.gz
+rm nvim-linux64.tar.gz
+cd /opt/nvim-linux64/bin
+./nvim
+#dale a no 
+#si quieres quitar el $ en el nvim te metes en el archivo con nano ~/.config/nvim/lua/core/init.lua escribes la opcion vim.opt.list=false y listo.
+
 
 # Mensaje de Instalado
 
