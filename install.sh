@@ -10,7 +10,9 @@ purpleColour="\e[0;35m\033[1m"
 turquoiseColour="\e[0;36m\033[1m"
 grayColour="\e[0;37m\033[1m"
 
+#variables globales
 ruta=$(pwd)
+
 function helpPanel (){
     echo -e "e) Ejecutar script para modificacion del entorno"
     echo -e "h) panel de ayuda no es muy complejo solo ejecutar y estar atento a las interacciones del script con el usuario..."
@@ -204,6 +206,3 @@ elif [ $parameter_counter -eq 1 ]; then
 else
     helpPanel
 fi    
-    
-
-
