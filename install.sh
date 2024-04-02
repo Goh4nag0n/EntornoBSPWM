@@ -172,7 +172,7 @@ function utilsPermission (){
 function nvimInstall (){
 
     #configuramos nvim
-    git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+    git clone https://github.com/NvChad/starter ~/.config/nvim && nvim
     cd /opt
     cp $ruta/nvim-linux64.tar.gz .
     tar -xf nvim-linux64.tar.gz
