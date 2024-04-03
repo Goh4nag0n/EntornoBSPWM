@@ -52,7 +52,7 @@ function dependencies (){
     
     echo -e "[+] Instalamos paquetes adicionales"
     sleep 1
-    sudo apt install -y feh scrot scrub zsh rofi xclip bat locate neofetch wmname acpi bspwm sxhkd imagemagick ranger kitty thunar telnet krusader baobab flameshot ipcalc npm 
+    sudo apt install -y feh scrot scrub zsh rofi xclip bat locate neofetch wmname acpi bspwm sxhkd imagemagick ranger kitty thunar telnet krusader baobab flameshot ipcalc npm nvim 
 }
 # Creando carpeta de Reposistorios
 function installRepositories () {
@@ -173,12 +173,19 @@ function nvimInstall (){
 
     #configuramos nvim
     git clone https://github.com/NvChad/starter ~/.config/nvim && nvim
+    cd ~/.config/nvim
+    rm -r ~/.config/nvim
     cd /opt
     cp $ruta/nvim-linux64.tar.gz .
     tar -xf nvim-linux64.tar.gz
     rm nvim-linux64.tar.gz
     cd /opt/nvim-linux64/bin
     ./nvim
+    sudo apt remove neovim
+    sudo su
+    cd ~/.config/nvim 
+    rm -rf nvim
+    cp -r 
     #dale a no 
     #si quieres quitar el $ en el nvim te metes en el archivo con nano ~/.config/nvim/lua/core/init.lua escribes la opcion vim.opt.list=false y listo.
 }
@@ -199,7 +206,7 @@ elif [ $parameter_counter -eq 1 ]; then
     installRepositories
     filesConfiguration
     utilsPermission
-    nvimInstall
+    #nvimInstall
     notify-send "BSPWM INSTALADO"
 else
     helpPanel
