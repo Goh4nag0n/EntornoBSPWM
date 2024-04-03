@@ -173,20 +173,25 @@ function utilsPermission (){
 function nvimInstall (){
 
     #configuramos nvim
-    git clone https://github.com/NvChad/starter ~/.config/nvim && nvim
     cd ~/.config/nvim
     rm -r ~/.config/nvim
+    git clone https://github.com/NvChad/starter ~/.config/nvim && nvim
     cd /opt
-    cp $ruta/nvim-linux64.tar.gz .
-    tar -xf nvim-linux64.tar.gz
+    sudo cp $ruta/nvim-linux64.tar.gz .
+    sudo tar -xf nvim-linux64.tar.gz
     rm nvim-linux64.tar.gz
     cd /opt/nvim-linux64/bin
     ./nvim
     sudo apt remove neovim
+    cd
+    user=$(pwd)
+    
     sudo su
+    cd
     cd ~/.config/nvim 
     rm -rf nvim
-    cp -r 
+    cp -r $user/.config/nvim .
+    nvim
     #dale a no 
     #si quieres quitar el $ en el nvim te metes en el archivo con nano ~/.config/nvim/lua/core/init.lua escribes la opcion vim.opt.list=false y listo.
 }
@@ -207,7 +212,7 @@ elif [ $parameter_counter -eq 1 ]; then
     installRepositories
     filesConfiguration
     utilsPermission
-    #nvimInstall
+    nvimInstall
     notify-send "BSPWM INSTALADO"
 else
     helpPanel
