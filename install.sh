@@ -53,7 +53,7 @@ function dependencies (){
     
     echo -e "[+] Instalamos paquetes adicionales"
     sleep 1
-    sudo apt install -y feh scrot scrub zsh rofi xclip bat locate neofetch wmname acpi bspwm sxhkd imagemagick ranger kitty thunar telnet krusader baobab flameshot ipcalc npm nvim 
+    sudo apt install -y feh scrot scrub zsh rofi xclip bat locate neofetch wmname acpi bspwm sxhkd imagemagick ranger kitty thunar telnet krusader baobab flameshot ipcalc npm nvim rofi
 }
 # Creando carpeta de Reposistorios
 function installRepositories () {
