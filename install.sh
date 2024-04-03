@@ -14,8 +14,9 @@ grayColour="\e[0;37m\033[1m"
 ruta=$(pwd)
 
 function helpPanel (){
-    echo -e "e) Ejecutar script para modificacion del entorno"
-    echo -e "h) panel de ayuda no es muy complejo solo ejecutar y estar atento a las interacciones del script con el usuario..."
+    echo -e "\nUso:"
+    echo -e "\te) Ejecutar script para modificacion del entorno"
+    echo -e "\th) panel de ayuda no es muy complejo solo ejecutar y estar atento a las interacciones del script con el usuario..."
 }
 
 function updateSystem (){
