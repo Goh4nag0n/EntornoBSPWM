@@ -174,7 +174,7 @@ function nvimInstall (){
 
     #configuramos nvim
     cd ~/.config/nvim
-    rm -r ~/.config/nvim
+    sudo rm -r ~/.config/nvim
     git clone https://github.com/NvChad/starter ~/.config/nvim 
     cd /opt
     sudo cp $ruta/nvim-linux64.tar.gz .
@@ -189,7 +189,7 @@ function nvimInstall (){
     sudo su
     cd
     cd ~/.config/nvim 
-    rm -rf nvim
+    sudo rm -rf nvim
     cp -r $user/.config/nvim .
     nvim
     #dale a no 
