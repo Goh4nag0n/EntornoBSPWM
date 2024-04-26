@@ -56,6 +56,7 @@ function dependencies (){
     echo -e "\n${yellowColour}[+]${endColour}${grayColour} Instalamos paquetes adicionales${endColour}"
     sleep 1
     sudo apt install -y feh scrot scrub zsh rofi xclip bat locate neofetch wmname acpi bspwm sxhkd imagemagick ranger kitty thunar telnet krusader baobab flameshot ipcalc npm
+#nm-connection-editor para gestionar tarjeta de red.
 }
 # Creando carpeta de Reposistorios
 function installRepositories () {
