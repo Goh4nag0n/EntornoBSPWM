@@ -6,6 +6,7 @@ Este script en Bash está diseñado para automatizar la configuración del entor
 ***
 
 Funciones del Script
+
 *updateSystem:* Esta función actualiza los paquetes del sistema dependiendo de si el entorno es Parrot o Debian, utilizando los comandos apt update y apt upgrade.
 
 *dependencies:* Instala las dependencias necesarias para el entorno de BSPWM y herramientas adicionales como Polybar, Picom, etc., utilizando el comando apt install.
