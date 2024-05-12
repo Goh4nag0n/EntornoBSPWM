@@ -26,8 +26,8 @@ function updateSystem (){
     echo -e "\n${yellowColour}[+]${endColour}${grayColour} el entorno es parrot o debian puro?${endColour}"&& read entorno
     while true; do
         if [ $entorno = parrot ]; then
-            sudo apt update > /dev/null 2>&1
-            sudo parrot-upgrade > /dev/null 2>&1
+            sudo apt update
+            sudo parrot-upgrade
             break
         elif [ $entorno = debian ]; then
             sudo apt update > /dev/null 2>&1 
