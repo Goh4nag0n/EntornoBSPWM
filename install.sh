@@ -30,8 +30,8 @@ function updateSystem (){
             sudo parrot-upgrade
             break
         elif [ $entorno = debian ]; then
-            sudo apt update > /dev/null 2>&1 
-            sudo apt upgrade > /dev/null 2>&1
+            sudo apt update  
+            sudo apt upgrade
             break
         else 
             echo -e "\n${redColour}[!] unicamente se puede responder con parrot o debian en minusculas${endColour}"
@@ -182,10 +182,6 @@ function utilsPermission (){
     chmod +x ~/.config/polybar/launch.sh
     sudo chmod +x /usr/local/bin/whichSystem.py
 
-    echo -e "\n${yellowColour}[+]${endColour}${grayColour} Configuramos el Tema de Rofi${endColour}"
-
-    rofi-theme-selector
-
     echo -e "\n${yellowColour}[+]${endColour}${grayColour} Removiendo Repositorios${endColour}"
     rm -rf ~/github
     
@@ -197,6 +193,10 @@ function utilsPermission (){
 
 function nvimInstall (){
 
+    echo -e "\n${yellowColour}[+]${endColour}${grayColour} Configuramos el Tema de Rofi${endColour}"
+
+    rofi-theme-selector
+    
     #configuramos nvim
     cd ~/.config/nvim
     sudo rm -r ~/.config/nvim
