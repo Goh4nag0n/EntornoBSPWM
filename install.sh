@@ -183,25 +183,9 @@ function utilsPermission (){
     
 }
 
-#function nvimInstall (){
-    clear
+function rofiTheme (){
     
-    
-    #configuramos nvim
-    echo -e "${yellowcolour}[+]${endcolour} Configurando Nvchad en el escritorio de usuario...."
-    sleep 2
-    cd ~/.config/nvim
-    sudo rm -r ~/.config/nvim
-    git clone https://github.com/NvChad/starter ~/.config/nvim 
-    cd /opt
-    sudo cp $ruta/nvim-linux64.tar.gz .
-    sudo tar -xf nvim-linux64.tar.gz
-    rm nvim-linux64.tar.gz
-    cd /opt/nvim-linux64/bin
-    ./nvim
-    sudo apt remove neovim
-    
-   echo -e "\n${yellowColour}[+]${endColour}${grayColour} Configuramos el Tema de Rofi${endColour}"
+
 
     rofi-theme-selector
     #dale a no 
@@ -224,6 +208,7 @@ elif [ $parameter_counter -eq 1 ]; then
     installRepositories
     filesConfiguration
     utilsPermission
+    rofiTheme
     notify-send "BSPWM INSTALADO"
 else
     helpPanel
