@@ -187,7 +187,7 @@ function utilsPermission (){
     sudo apt install brave-browser
 }
 
-function nvimInstall (){
+#function nvimInstall (){
     clear
     
     
@@ -228,7 +228,6 @@ elif [ $parameter_counter -eq 1 ]; then
     installRepositories
     filesConfiguration
     utilsPermission
-    nvimInstall
     notify-send "BSPWM INSTALADO"
 else
     helpPanel
